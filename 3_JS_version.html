@@ -1,0 +1,92 @@
+<!doctype html>
+<!-- 이 html는 관용적이다라는것 표현하기 위해서 doctype라고 써준다. -->
+<html>
+    <!-- head위에 최고위직 태그는 html -->
+<head>
+
+    <!--본문을 성명해준는것, head로 해줘야함-->
+    <title>JavaScript - JS</title>
+    <meta charset="utf-8">
+    <script>
+    function night_DayHandler(self){    
+        var target = document.querySelector('body');
+        if (self.value === 'night'){
+            target.style.backgroundColor='black';
+            target.style.color='white';
+            self.value = 'day';
+
+            var alist = document.querySelectorAll('a');
+            var i = 0;
+            while(i < alist.length){
+                console.log(alist[i]);
+                alist[i].style.color='powderblue';
+                i = i +1;
+            }
+        }    
+        else{
+            target.style.backgroundColor='white';
+            target.style.color='black';
+            self.value = 'night';
+
+            var alist = document.querySelectorAll('a');
+            var i = 0;
+            while(i < alist.length){
+                console.log(alist[i]);
+                alist[i].style.color='blue';
+                i = i +1;
+            }
+        }    
+    }
+    </script>
+    
+</head>
+
+<!-- 아래는 본문 , 본문은 body로 묵어야함-->
+<body>
+    <h1><a href="index.html" style="color:blue;">WEB</a></h1>
+    <input type="button" value="night" onclick="
+        document.querySelector('body').style.backgroundColor='black';
+        document.querySelector('body').style.color='white';
+    ">
+    <input type="button" value="day" onclick="
+        document.querySelector('body').style.backgroundColor='white';
+        document.querySelector('body').style.color='black';
+    ">
+    <input id="night_day" type="button" value="night" onclick="
+    if (document.querySelector('#night_day').value === 'night'){
+        document.querySelector('body').style.backgroundColor='black';
+        document.querySelector('body').style.color='white';
+        document.querySelector('#night_day').value = 'day';
+
+    }    
+    else{
+        document.querySelector('body').style.backgroundColor='white';
+        document.querySelector('body').style.color='black';
+        document.querySelector('#night_day').value = 'night';
+    }    
+    ">
+    
+    <ol>
+        <li><a href="1.html">HTML</a></li>
+        <li><a href="2.html">CSS</a></li>
+        <li><a href="3.html">JavaScript</a></li>
+    </ol>
+    <h2>JS이란?</h2>
+    <p>
+        JavaScript란 무엇인가요?
+        JavaScript는 개발자가 대화식 웹 페이지를 만들기 위해 사용하는 프로그래밍 언어입니다. 
+        소셜 미디어 피드 새로 고침부터 애니메이션 및 대화형 지도 표시에 이르기까지, JavaScript 기능은 웹사이트의 사용자 경험을 개선할 수 있습니다. 
+        클라이언트 측 스크립팅 언어로서 JavaScript는 월드 와이드 웹의 핵심 기술 중 하나입니다. 예를 들어 인터넷 탐색 시 웹페이지에서 이미지 슬라이드쇼, 클릭하면 표시되는 
+        드롭 다운 메뉴 또는 객체 색상의 동적 변화를 보게 된다면 이는 JavaScript의 효과를 보는 것입니다.
+    </p>
+    <!-- 처음 night_day로 했을때 아이디가 같기 떄문에 위에것만 버튼의 이름이 바뀌었다. 근데 1억개라면 하나하나 바꿔줄 수 없기때문에 자기 자신을 가리키는 this를 사용한다. -->
+    <input id="night_day2" type="button" value="night" onclick="
+        night_DayHandler(this) 
+    ">
+    
+    
+    
+
+</body>
+</html>
+

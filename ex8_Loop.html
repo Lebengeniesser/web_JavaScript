@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<title></title>
+	</head>
+	<body>
+        <h1>Loop & Array</h1>
+        <h2>Co workers</h2>
+        <ul>
+            <li>egoing</li>
+            <li>lezche</li>
+            <li>duru</li>
+            <li>taeho</li>
+        </ul>
+        <h2>반복문을 사용한 심화과정1</h2>
+        <script>
+            var coworkers = ["egoing","lezche","duru","taeho","Jason"];
+        </script>
+        <ul>
+        <script>
+            var i = 0;
+            while(i<coworkers.length){
+            document.write('<li>'+coworkers[i]+'</li>');
+            i = i+1;
+            }
+        </script>
+        </ul>
+        <h2>반복문을 사용한 심화과정2</h2>
+        <script>
+            var coworkers = ["egoing","lezche","duru","taeho","Jason"];
+        </script>
+        <ul>
+        <script>
+            // 이렇게 써줌으로써 그 사람에 맞는 홈페이지가 켜지게 할 수 있게 하이퍼링크 처리를 해준다.!!!! krass!!
+            var i = 0;
+            while(i<coworkers.length){
+            document.write('<li><a href='+'a.com/'+coworkers[i]+'>'+coworkers[i]+'</a></li>');
+            i = i+1;
+            }
+        </script>
+        </ul>
+
+        <input id="nada" type="button" value="night" onclick="
+            var btn = document.querySelector('body');
+            if(this.value === 'night'){
+                btn.style.backgroundColor='black';
+                btn.style.color='yellow';
+                this.value = 'day';
+            }else{
+                btn.style.backgroundColor='white';
+                btn.style.color='black';
+                this.value = 'night';
+            }
+        ">
+        
+	</body>
+    </html>
