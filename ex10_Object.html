@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<title></title>
+	</head>
+	<body>
+        <h1>Object</h1>
+        <h2>Create</h2>
+        <script>
+            var coworkers = {
+                "programer":"egoing",
+                "designer":"leechze"
+            }; //객체는 {},배열은 []
+            document.write("programer: "+coworkers.programer+'<br>'); // . 은 object access operate이다.
+            document.write("designer: "+coworkers.designer+'<br>'); 
+            coworkers.bookkeeper="duru"; //.뒤에 키값을 넣어주는거(추가 방법 1)
+            document.write("bookkeeper: "+coworkers.bookkeeper+'<br>'); 
+            coworkers["data scientist"] = "taeho";//띄어쓰기가 있는 경우 키를 넣어주고 값을 똑같이 넣어준다.(추가방법2)
+            document.write("data scientist: "+coworkers["data scientist"]+'<br>'); 
+        </script>
+        <h2>Iterate</h2>
+        <script>
+        
+            for(var key in coworkers){
+                document.write(key+': '+coworkers[key]+'<br>');
+            }
+        </script>
+        <h2>Property & Method</h2>
+        <script>
+            coworkers.showAll = function(){
+                for(var key in this){
+                document.write(key+': '+this[key]+'<br>');
+                }
+            }//coworkers이름이 바껴도 this자기자신을 받아서 영향을 받지 않는다.
+            //객체에 소속된 함수를 메소드라고 부란다.ex)showAll
+            //객체에 소속된 변수 ex)programer,designer등등을 Property라고 부른다. 속성
+            coworkers.showAll();//객체에 소속된 함수를 만들수있다고 해석
+        </script>
+	</body>
+</html>
+<!-- 다시 3.html로 가기. -->
